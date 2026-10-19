@@ -1,0 +1,694 @@
+@charset "utf-8";
+/* CSS Document - [Thực hành Bước 8] Phối màu đơn tông thứ hai: Emerald Green (#059669) */
+
+:root {
+	/* Bảng màu đơn tông xanh ngọc (Monochromatic Emerald - Base #059669 / #10B981) */
+	--tier-1: #059669; /* Bậc 1: Màu chính / logo / ON SALE badge / preview circle */
+	--tier-2: #10b981; /* Bậc 2: Màu nhấn nổi bật */
+	--tier-3: #34d399; /* Bậc 3: Tông phụ */
+	--tier-4: #6ee7b7; /* Bậc 4: Màu nền banner chính */
+	--tier-5: #86efac; /* Bậc 5: Tông sáng vừa */
+	--tier-6: #a7f3d0; /* Bậc 6: Tông sáng */
+	--tier-7: #a7f3d0; /* Bậc 7: Màu nền khối nội dung previews */
+	--tier-8: #d1fae5; /* Bậc 8: Viền phân tách */
+	--tier-9: #ecfdf5; /* Bậc 9: Màu nền footer sáng */
+	--tier-10: #f0fdf4; /* Bậc 10: Nền khối info siêu nhạt hài hòa */
+	--text-primary: #1e293b; /* Màu chữ đen toàn trang */
+	--banner-btn-hover: #047857;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+.clear {
+	clear: both;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.hide {
+	display: none;
+}
+::selection {
+	background: var(--tier-1);
+	color: #ffffff;
+}
+::-moz-selection {
+	background: var(--tier-1);
+	color: #ffffff;
+}
+.c2 {
+	width: 16.6666%;
+}
+.c3 {
+	width: 25%;
+}
+.c4 {
+	width: 33.3333%;
+}
+.c5 {
+	width: 41.6666%;
+}
+.c9 {
+	width: 75%;
+}
+.c12 {
+	width: 100%;
+}
+.c2, .c3, .c4, .c5, .c9, .c12 {
+	padding: 0 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.fix-size {
+	max-width: 1000px;
+	margin: auto;
+}
+
+/* Palette demonstration header */
+.color-palette-bar {
+	background: #0f172a;
+	color: #f8fafc;
+	padding: 9px 16px;
+	font-size: 13px;
+	border-bottom: 1px solid #1e293b;
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.palette-container {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+.palette-info {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+.palette-badge {
+	background: var(--tier-1);
+	color: #ffffff;
+	padding: 2px 8px;
+	border-radius: 12px;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+.palette-swatches {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+.swatch {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 4px;
+	font-size: 10px;
+	font-weight: bold;
+	color: #1e293b;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	cursor: default;
+}
+.swatch[data-tier="1"],
+.swatch[data-tier="2"],
+.swatch[data-tier="3"] {
+	color: #ffffff;
+}
+.theme-switchers {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+.theme-btn {
+	padding: 5px 12px;
+	border-radius: 4px;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: 600;
+	transition: all 0.2s ease;
+	color: #cbd5e1;
+	background: #1e293b;
+	border: 1px solid #334155;
+}
+.theme-btn:hover {
+	color: #ffffff;
+	border-color: var(--tier-1);
+}
+.theme-btn.active {
+	background: var(--tier-1);
+	color: #ffffff;
+	border-color: var(--tier-1);
+}
+
+/* core */
+@font-face {
+	font-family: font1;
+	src: url(fonts/pacifico.woff);
+}
+@font-face {
+	font-family: font2;
+	src: url(fonts/ptsans.woff);
+}
+body {
+	font-family: font2, 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	font-size: 15.5px;
+	color: var(--text-primary);
+	background: url(images/bg.png);
+	line-height: 1.62em;
+}
+
+/* header */
+header {
+	color: #eee;
+	background: #1e293b;
+	line-height: 32px;
+}
+header a {
+	color: #94a3b8;
+	font-size: 14px;
+	transition: color 0.2s ease;
+}
+header a:hover {
+	color: var(--tier-2);
+}
+
+/* nav */
+body > nav ul {
+	margin-top: 45px;
+}
+body > nav ul li {
+	width: 31%;
+	display: inline-block;
+	text-align: center;
+}
+body > nav ul li a {
+	color: var(--tier-1);
+	display: inline-block;
+	padding: 5px 0;
+	font-weight: bold;
+	transition: color 0.2s ease, border-color 0.2s ease;
+}
+body > nav ul li:nth-child(2) a {
+	border-bottom: solid 2px var(--tier-1);
+}
+body > nav ul:hover li a {
+	border-bottom: none;
+}
+body > nav ul li:hover a {
+	border-bottom: solid 2px var(--tier-1);
+	color: var(--banner-btn-hover);
+}
+body > nav a.c2 {
+	display: block;
+}
+body > nav a img {
+	display: block;
+	margin: 20px 0;
+}
+body > nav form {
+	margin-top: 45px;
+}
+input, button {
+	width: 100%;
+	height: 30px;
+	color: #a9a9a9;
+	background: none;
+	border: none;
+	outline: none;
+}
+body > nav input[type=search] {
+	width: 80%;
+	box-shadow: inset 0 1px 1px rgba(210, 210, 210, 0.8);
+	text-indent: 10px;
+	border: 1px solid #dcdcdc;
+	border-radius: 3px 0 0 3px;
+	color: #222;
+}
+body > nav input[type=search]:focus {
+	background: #fff;
+	border-color: var(--tier-1);
+	box-shadow: inset 0 1px 1px rgba(170, 170, 170, 0.7);
+}
+body > nav input[type=submit] {
+	width: 16%;
+	font-weight: bold;
+	color: #ffffff;
+	background: var(--tier-1);
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+body > nav input[type=submit]:hover {
+	background: var(--banner-btn-hover);
+}
+body > nav input[type=search]:focus + input {
+	background: var(--banner-btn-hover);
+}
+
+/* banner (Bước 2: Nền màu bậc 4 #6EE7B7, chữ màu trắng/đen) */
+#banner {
+	background: var(--tier-4);
+	box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.15), inset 0 -2px rgba(255, 255, 255, 0.4);
+	font-weight: bold;
+	padding: 24px 0;
+	color: #064e3b;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+h1, h2, h3 {
+	font-family: font1;
+	line-height: normal;
+	padding-bottom: 10px;
+}
+h1 {
+	font-size: 44px;
+}
+h2 {
+	font-size: 38px;
+}
+h3 {
+	font-size: 24px;
+}
+#banner aside button {
+	height: 56px;
+	border-radius: 6px;
+	margin-top: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+	box-shadow: inset 0 -3px 2px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.15);
+	background: var(--tier-1);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+#banner aside button:hover {
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.2);
+	background: var(--banner-btn-hover);
+}
+#banner aside button:active {
+	box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.2);
+	background: #064e3b;
+}
+#banner aside p {
+	text-align: center;
+	font-size: 11px;
+	padding: 5px 0;
+	color: #064e3b;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+/* main */
+#main {
+	padding-top: 25px;
+	overflow: hidden;
+}
+#main section > .right {
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#main section h3 {
+	font-family: font2;
+	font-size: 24px !important;
+	margin-bottom: 25px;
+}
+#main section h3 del {
+	color: #888888;
+}
+#main section > p {
+	text-align: justify;
+	margin-bottom: 25px;
+	color: var(--text-primary);
+}
+
+/* trans (Bước 3: Nền ON SALE đổi thành màu bậc 1 #059669) */
+.trans {
+	width: 225px;
+	height: 225px;
+	margin: auto;
+	perspective: 800px;
+	-webkit-perspective: 800px;
+}
+.trans .cover {
+	width: 225px;
+	height: 225px;
+	position: relative;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	transition: all 0.5s ease-out;
+	-webkit-transition: all 0.5s ease-out;
+}
+.trans .face {
+	background: url(images/disc-cover.png) no-repeat;
+	width: 205px;
+	height: 205px;
+	padding: 10px;
+	border-radius: 5px;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+	position: absolute;
+	overflow: hidden;
+}
+.trans .back {
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), inset 0 225px rgba(255, 255, 255, 0.85);
+	text-align: center;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	padding: 9px;
+	border: solid 1px var(--tier-8);
+}
+.trans:hover .cover {
+	transform: rotateY(-180deg);
+	-webkit-transform: rotateY(-180deg);
+}
+.trans .back b {
+	font-size: 14px;
+	color: #111;
+}
+.trans .back ol {
+	margin-top: 10px;
+}
+.trans .back ol li {
+	list-style: decimal inside;
+	line-height: 28px;
+	text-align: left;
+	font-size: 13px;
+	color: #222;
+}
+.trans .on-sale {
+	background: var(--tier-1);
+	color: #ffffff;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	margin-top: 14px;
+	margin-left: -140px;
+	text-align: center;
+	line-height: 28px;
+	font-weight: bold;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.trans .back button {
+	color: #ffffff;
+	background: var(--tier-1);
+	border-radius: 4px;
+	margin-top: 10px;
+	width: 100px;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	transition: background 0.2s ease;
+}
+.trans .back button:hover {
+	background: var(--banner-btn-hover);
+}
+
+/* preview (Bước 3 & 4: Nền chuyển thành màu bậc 7 #A7F3D0, badge & circle chuyển thành bậc 1 #059669, chữ đen) */
+#main .preview li {
+	width: 50%;
+}
+#main .preview li a {
+	display: block;
+	background: var(--tier-7);
+	border-radius: 6px;
+	margin: 15px;
+	overflow: hidden;
+	color: var(--text-primary);
+	position: relative;
+	padding: 10px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#main .preview li a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+}
+#main .preview li.left a {
+	margin-left: 0;
+}
+#main .preview li.right a {
+	margin-right: 0;
+}
+#main .preview .title {
+	color: #ffffff;
+	font-size: 10px;
+	display: block;
+	padding: 0 20px;
+	line-height: 14px;
+	background: var(--tier-1);
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	position: absolute;
+	top: 13px;
+	left: -20px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+}
+#main .preview .circle {
+	margin-left: 10px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: var(--tier-1);
+	position: relative;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	transition: transform 0.2s ease, background 0.2s ease;
+}
+#main .preview li a:hover .circle {
+	transform: scale(1.06);
+	background: var(--tier-2);
+}
+#main .preview .triangle {
+	color: #ffffff;
+	font-size: 28px;
+	transform: scaleY(2.5);
+	-webkit-transform: scaleY(2.5);
+	top: 7px;
+	left: 14px;
+	position: absolute;
+}
+#main .preview b {
+	font-family: font1;
+	display: block;
+	line-height: 22px;
+	color: #064e3b;
+}
+#main .preview small {
+	font-size: 11px;
+	display: block;
+	line-height: 20px;
+	color: #374151;
+}
+#main blockquote {
+	position: relative;
+	margin-bottom: 35px;
+}
+#main blockquote .quote {
+	font-size: 18px;
+	transform: scale(10, 10);
+	-webkit-transform: scale(10, 10);
+	color: #d1d5db;
+	position: absolute;
+	left: 20px;
+	top: 65px;
+}
+#main blockquote p {
+	padding-top: 20px;
+	padding-left: 70px;
+	font-size: 23px;
+	font-style: italic;
+	color: #4b5563;
+}
+#main blockquote small {
+	display: block;
+	margin-left: 20px;
+	margin-top: 5px;
+	color: #6b7280;
+}
+#main aside h3 {
+	padding-bottom: 0px;
+}
+#main aside p {
+	text-align: center;
+	color: var(--text-primary);
+}
+#main aside .about {
+	margin-bottom: 15px;
+	padding-bottom: 20px;
+	border-bottom: #ccc dashed 1px;
+	text-align: justify;
+	margin-top: 5px;
+}
+#main aside .aside-cover {
+	margin-bottom: 15px;
+}
+
+/* info (Tông màu bậc 10 siêu nhạt #F0FDF4) */
+#info {
+	padding: 25px 0;
+	background: var(--tier-10);
+	color: var(--text-primary);
+	border-top: 1px solid var(--tier-8);
+}
+#info p {
+	margin-bottom: 15px;
+	text-align: justify;
+}
+#info input[type=email] {
+	text-indent: 10px;
+	background: #ffffff;
+	border: 1px solid var(--tier-7);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+	margin-bottom: 15px;
+	border-radius: 4px;
+	color: #222222;
+}
+#info input[type=email]:focus {
+	border-color: var(--tier-1);
+}
+#info input[type=submit] {
+	background: var(--tier-1);
+	color: #ffffff;
+	box-shadow: 0 2px 4px rgba(5, 150, 105, 0.25);
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+#info input[type=submit]:hover {
+	background: var(--banner-btn-hover);
+}
+
+/* footer (Bước 5: Nền màu bậc 9 #ECFDF5 tạo độ sáng, chữ đen) */
+footer {
+	color: var(--text-primary);
+	background: var(--tier-9);
+	line-height: 48px;
+	font-weight: 500;
+	border-top: 1px solid var(--tier-8);
+}
+
+/* small screen */
+@media (max-width: 800px) {
+.hide {
+	display: block;
+}
+.show {
+	display: none;
+}
+.c {
+	width: 100%;
+}
+header a.right {
+	float: left;
+}
+header a.hide {
+	float: right;
+}
+header a.hide img {
+	display: block;
+	margin: 6px;
+}
+body > nav a.c2 img {
+	margin: 20px auto;
+}
+#banner {
+	padding-bottom: 10px;
+}
+h1 {
+	font-size: 34px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 18px;
+}
+#main .preview li {
+	width: 100%;
+}
+#main .preview li a {
+	margin: 15px 0;
+}
+#main aside .aside-cover {
+	width: 50%;
+	float: left;
+}
+#main-nav {
+	margin: 50px 0;
+}
+#main-nav ul li a {
+	display: block;
+	line-height: 56px;
+	border-top: #ddd solid 1px;
+	color: var(--tier-1);
+	padding: 0 10px;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+}
+#main-nav ul li:last-child a {
+	border-bottom: #ddd solid 1px;
+}
+#main-nav ul li a:hover {
+	background: rgba(167, 243, 208, 0.4);
+}
+#main-nav .arrow {
+	background: url(images/arrow.png) no-repeat bottom;
+	width: 30px;
+	height: 20px;
+	display: inline-block;
+	transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+}
+#main-nav ul li:first-child a:hover .arrow {
+	background: url(images/double-arrow.png) no-repeat bottom;
+}
+#main-nav input {
+	border: #aaa solid 1px;
+	height: 34px;
+	margin: 10px 0;
+}
+#main-nav input[type=search] {
+	box-shadow: inset 0 1px 1px rgba(170, 170, 170, 0.4);
+	text-indent: 10px;
+}
+#main-nav input[type=submit] {
+	color: #ffffff;
+	background: var(--tier-1);
+}
+}
+@media (max-width: 500px) {
+header p.c9 {
+	width: 66.6666%;
+}
+header p.c3 {
+	width: 33.3333%;
+}
+.palette-swatches {
+	display: none;
+}
+}
